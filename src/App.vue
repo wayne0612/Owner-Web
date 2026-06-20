@@ -10,7 +10,7 @@ import TheFooter from './components/TheFooter.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#0a0a0a] text-[#f5f5f5]">
+  <div class="min-h-screen bg-bg text-fg">
     <TheNavbar />
     <main>
       <HeroSection />

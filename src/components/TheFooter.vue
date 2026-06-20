@@ -1,17 +1,17 @@
 <script setup>
-import { Instagram, Youtube, MonitorPlay, Mail, ArrowUpRight, MapPin } from 'lucide-vue-next'
+import { Instagram, Youtube, MonitorPlay, Mail, MapPin } from 'lucide-vue-next'
 </script>
 
 <template>
-  <footer id="contact" class="relative border-t border-[#262626]/80 bg-[#0a0a0a] mt-12">
+  <footer id="contact" class="relative border-t border-line/80 bg-bg mt-12">
     <!-- CTA -->
-    <div class="container mx-auto px-4 md:px-8 py-16 md:py-20">
-      <div class="card !p-8 md:!p-12 text-center bg-gradient-to-br from-[#141414] to-[#ff4d2e]/10 border-[#ff4d2e]/30">
+    <div class="container mx-auto py-16 md:py-20">
+      <div class="card card-accent text-center">
         <div class="eyebrow mb-4">Contact / Get in touch</div>
-        <h2 class="font-display text-3xl md:text-5xl font-semibold text-[#f5f5f5] leading-tight">
-          有故事,想<span class="text-[#ff4d2e]">合作</span>?
+        <h2 class="font-display text-h2 text-fg leading-[1.05]">
+          有故事,想<span class="text-accent">合作</span>?
         </h2>
-        <p class="mt-5 text-[#a1a1aa] max-w-xl mx-auto leading-relaxed">
+        <p class="mt-5 text-fg-dim max-w-xl mx-auto leading-[1.75]">
           无论是品牌商业拍摄、短片合作、个人写真或其他项目,欢迎来信沟通。我们会在 48 小时内回复。
         </p>
         <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -21,38 +21,38 @@ import { Instagram, Youtube, MonitorPlay, Mail, ArrowUpRight, MapPin } from 'luc
           </a>
           <a href="#" class="btn-ghost">
             <MapPin :size="14" />
-            {{ profile?.location || '上海 / Shanghai' }}
+            中国 · 上海
           </a>
         </div>
       </div>
     </div>
 
     <!-- 主 footer -->
-    <div class="container mx-auto px-4 md:px-8 pb-8">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10">
-        <div class="md:col-span-4">
-          <div class="font-display text-2xl font-bold text-[#f5f5f5] mb-4">
-            LUMEN<span class="text-[#ff4d2e]">.</span>
+    <div class="container mx-auto pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10">
+        <div class="md:col-span-5">
+          <div class="font-display text-2xl font-semibold text-fg mb-4">
+            LUMEN<span class="text-accent">.</span>
           </div>
-          <p class="text-sm text-[#a1a1aa] leading-relaxed max-w-sm">
+          <p class="text-sm text-fg-dim leading-[1.75] max-w-sm">
             摄影摄像博主。独立摄影师与影像创作者。我们用镜头记录光与时间,为品牌与人留下有温度的影像。
           </p>
         </div>
 
         <div class="md:col-span-2">
           <div class="eyebrow mb-4">导航</div>
-          <ul class="space-y-2 text-sm text-[#e4e4e7]">
-            <li><a href="#home" class="hover:text-[#ff4d2e] transition">首页</a></li>
-            <li><a href="#portfolio" class="hover:text-[#ff4d2e] transition">作品</a></li>
-            <li><a href="#about" class="hover:text-[#ff4d2e] transition">关于</a></li>
-            <li><a href="#services" class="hover:text-[#ff4d2e] transition">服务</a></li>
-            <li><a href="#blog" class="hover:text-[#ff4d2e] transition">博客</a></li>
+          <ul class="space-y-3 text-sm text-fg-muted">
+            <li><a href="#home" class="link-text transition-colors">首页</a></li>
+            <li><a href="#portfolio" class="link-text transition-colors">作品</a></li>
+            <li><a href="#about" class="link-text transition-colors">关于</a></li>
+            <li><a href="#services" class="link-text transition-colors">服务</a></li>
+            <li><a href="#blog" class="link-text transition-colors">博客</a></li>
           </ul>
         </div>
 
         <div class="md:col-span-2">
           <div class="eyebrow mb-4">服务</div>
-          <ul class="space-y-2 text-sm text-[#e4e4e7]">
+          <ul class="space-y-3 text-sm text-fg-muted">
             <li>品牌商业拍摄</li>
             <li>短片与视频制作</li>
             <li>人像写真</li>
@@ -60,27 +60,27 @@ import { Instagram, Youtube, MonitorPlay, Mail, ArrowUpRight, MapPin } from 'luc
           </ul>
         </div>
 
-        <div class="md:col-span-4">
+        <div class="md:col-span-3">
           <div class="eyebrow mb-4">关注</div>
-          <div class="flex flex-wrap items-center gap-2">
-            <a href="#" class="inline-flex items-center gap-2 rounded-full border border-[#262626] bg-[#141414] px-4 py-2 text-sm text-[#a1a1aa] transition hover:border-[#ff4d2e] hover:text-[#ff4d2e]">
-              <Instagram :size="14" /> Instagram
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a href="#" class="icon-btn" aria-label="Instagram">
+              <Instagram :size="15" />
             </a>
-            <a href="#" class="inline-flex items-center gap-2 rounded-full border border-[#262626] bg-[#141414] px-4 py-2 text-sm text-[#a1a1aa] transition hover:border-[#ff4d2e] hover:text-[#ff4d2e]">
-              <Youtube :size="14" /> YouTube
+            <a href="#" class="icon-btn" aria-label="YouTube">
+              <Youtube :size="15" />
             </a>
-            <a href="#" class="inline-flex items-center gap-2 rounded-full border border-[#262626] bg-[#141414] px-4 py-2 text-sm text-[#a1a1aa] transition hover:border-[#ff4d2e] hover:text-[#ff4d2e]">
-              <MonitorPlay :size="14" /> Bilibili
+            <a href="#" class="icon-btn" aria-label="Bilibili">
+              <MonitorPlay :size="15" />
             </a>
           </div>
-          <a href="mailto:hello@lumen.studio" class="mt-5 inline-flex items-center gap-2 font-display font-medium text-[#f5f5f5] hover:text-[#ff4d2e] transition">
-            hello@lumen.studio <ArrowUpRight :size="16" />
+          <a href="mailto:hello@lumen.studio" class="mt-5 inline-flex items-center gap-2 font-display font-medium text-fg text-sm link-text transition-colors">
+            hello@lumen.studio
           </a>
         </div>
       </div>
 
       <!-- 版权栏 -->
-      <div class="pt-6 border-t border-[#262626]/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-[#71717a] font-mono tracking-wider">
+      <div class="pt-6 border-t border-line/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-fg-dim font-mono tracking-widest">
         <div>© 2026 Lumen Chen · All rights reserved.</div>
         <div>Shanghai · 31.2°N / 121.4°E · Photography · Videography</div>
       </div>
