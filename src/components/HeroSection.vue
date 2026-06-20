@@ -1,92 +1,80 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { ArrowDown } from 'lucide-vue-next'
-
-const loaded = ref(false)
-onMounted(() => {
-  setTimeout(() => loaded.value = true, 50)
-})
+import { ArrowDownRight, ArrowUpRight } from 'lucide-vue-next'
 </script>
 
 <template>
-  <section id="home" class="relative overflow-hidden">
-    <!-- Full-bleed hero — edge to edge, no container -->
-    <div class="relative h-[100svh] min-h-[640px] w-full">
-      <!-- Background image (Ken Burns) -->
-      <div class="absolute inset-0">
-        <img
-          src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cinematic%20dark%20portrait%20photography%20studio%20lighting%20film%20grain&image_size=landscape_16_9"
-          alt="Lumen — featured work"
-          class="w-full h-full object-cover opacity-80"
-          :class="loaded ? '' : 'opacity-0'"
-          style="transition: opacity 1.4s ease; animation: slow-ken-burns 18s ease-out both;"
-        />
-        <!-- Gradient wash: keep bottom readable for headline -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/50 via-[#0a0a0a]/20 to-[#0a0a0a]"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/70 via-[#0a0a0a]/30 to-transparent"></div>
-      </div>
+  <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- LEFT: 文字 -->
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="font-mono text-xs uppercase tracking-[0.25em] text-[#a1a1aa] mb-6">
+            01 / Portfolio — 2026
+          </div>
 
-      <!-- Top meta row (outside grid for full-bleed treatment) -->
-      <div class="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 pt-28 md:pt-32 flex items-start justify-between">
-        <div class="label">Portfolio · 2026 / 01</div>
-        <div class="label hidden md:block">Shanghai · 31.2°N 121.4°E</div>
-      </div>
-
-      <!-- Hero composition: brand first, headline second, body third, CTA fourth -->
-      <div class="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 mt-14 md:mt-20">
-        <div
-          class="max-w-[1050px]"
-          :style="{ opacity: loaded ? 1 : 0, transform: loaded ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 1.1s cubic-bezier(.22,1,.36,1), transform 1.1s cubic-bezier(.22,1,.36,1)' }"
-        >
-          <!-- Brand statement (tiny, quiet) -->
-          <p class="text-[#8a8a8a] text-[15px] md:text-base max-w-xl mb-6 md:mb-10 leading-relaxed">
-            Photography & moving image — by Lumen Chen
-          </p>
-
-          <!-- The headline is the loudest thing on the page -->
-          <h1
-            class="font-display font-medium text-hero text-[#f5f5f5] leading-[0.92] tracking-tightest"
-          >
-            Still frames,
-            <br class="hidden md:block" />
-            <span class="text-[#8a8a8a]">stilled</span> time.
+          <h1 class="font-display font-semibold tracking-tight leading-[0.95] text-[2.5rem] sm:text-[3rem] md:text-[4rem]">
+            以<span class="text-[#ff4d2e]">镜头</span>之名,<br />
+            书写光与<br />
+            时间的故事。
           </h1>
 
-          <!-- Support line -->
-          <div class="mt-10 md:mt-14 flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
-            <p class="text-[#c9c9c9] text-[15px] md:text-base max-w-md leading-relaxed">
-              Selected work from commercial, editorial, and personal projects — made between studio and street.
-            </p>
-            <a href="#portfolio" class="link-arrow group">
-              <span>View selected work</span>
-              <ArrowDown :size="14" class="transition group-hover:translate-y-1" />
+          <p class="mt-8 max-w-xl text-base md:text-lg text-[#a1a1aa] leading-relaxed">
+            我是 Lumen,一位独立摄影师与影像创作者。过去八年,穿梭于城市与自然之间,
+            用镜头记录那些转瞬即逝、却又值得被永远记住的瞬间。
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#portfolio" class="btn-primary">
+              浏览作品
+              <ArrowUpRight :size="16" />
+            </a>
+            <a href="#contact" class="btn-ghost">
+              联系合作
+              <ArrowDownRight :size="16" />
             </a>
           </div>
-        </div>
-      </div>
 
-      <!-- Bottom info row -->
-      <div class="absolute bottom-0 left-0 right-0 z-10">
-        <div class="mx-auto max-w-[1400px] px-6 md:px-10 pb-8 md:pb-10">
-          <div class="border-t border-[#1f1f1f]/70 pt-5 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 text-[11px] md:text-[12px] text-[#8a8a8a] font-mono uppercase tracking-[0.18em]">
-            <div>Portrait</div>
-            <div>Editorial</div>
-            <div class="hidden md:block">Commercial</div>
-            <div>Moving image</div>
+          <!-- 数据 -->
+          <div class="mt-14 grid grid-cols-3 gap-4 md:gap-6">
+            <div class="card !p-5 text-center">
+              <div class="font-display text-3xl md:text-4xl font-bold text-[#f5f5f5]">8<span class="text-[#ff4d2e]">+</span></div>
+              <div class="mt-1 font-mono text-[11px] uppercase tracking-widest text-[#a1a1aa]">从业年数</div>
+            </div>
+            <div class="card !p-5 text-center">
+              <div class="font-display text-3xl md:text-4xl font-bold text-[#f5f5f5]">120<span class="text-[#ff4d2e]">+</span></div>
+              <div class="mt-1 font-mono text-[11px] uppercase tracking-widest text-[#a1a1aa]">拍摄项目</div>
+            </div>
+            <div class="card !p-5 text-center">
+              <div class="font-display text-3xl md:text-4xl font-bold text-[#f5f5f5]">40<span class="text-[#ff4d2e]">+</span></div>
+              <div class="mt-1 font-mono text-[11px] uppercase tracking-widest text-[#a1a1aa]">合作品牌</div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Marquee band -->
-    <div class="relative overflow-hidden border-t border-b border-[#1f1f1f] bg-[#0a0a0a] py-5">
-      <div class="flex whitespace-nowrap will-change-transform" style="animation: marquee 32s linear infinite;">
-        <template v-for="i in 2" :key="i">
-          <span class="font-display text-[32px] md:text-[44px] font-medium text-[#f5f5f5] px-8 tracking-tight">Available for 2026 commissions</span>
-          <span class="font-display text-[32px] md:text-[44px] font-medium text-[#ff4d2e] px-8 tracking-tight">✦</span>
-          <span class="font-display text-[32px] md:text-[44px] font-medium text-[#8a8a8a] px-8 tracking-tight italic">Portrait · Editorial · Motion</span>
-          <span class="font-display text-[32px] md:text-[44px] font-medium text-[#ff4d2e] px-8 tracking-tight">✦</span>
-        </template>
+        <!-- RIGHT: 人像卡片 -->
+        <div class="lg:col-span-5 order-1 lg:order-2">
+          <div class="relative rounded-3xl overflow-hidden border border-[#262626] aspect-[4/5]">
+            <img
+              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=portrait%20photographer%20cinematic%20dark%20studio%20film&image_size=portrait_4_3"
+              alt="Lumen Portrait"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+            <!-- 渐变遮罩 -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent"></div>
+            <!-- 元数据 -->
+            <div class="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#e4e4e7]">
+              Shot — 01
+            </div>
+            <div class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#e4e4e7]">
+              31.2°N / 121.4°E
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-[#f5f5f5]">
+              <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[#a1a1aa] mb-1">Photographer · Director</div>
+              <div class="font-display text-2xl font-semibold">Lumen Chen</div>
+              <div class="mt-1 text-sm text-[#a1a1aa]">f/1.8 · 1/125s · ISO 400</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

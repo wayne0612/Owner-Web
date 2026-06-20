@@ -4,15 +4,13 @@ import { ArrowUpRight, Clock } from 'lucide-vue-next'
 </script>
 
 <template>
-  <section id="blog" class="relative py-24 md:py-32 border-t border-[#262626]/40">
+  <section id="blog" class="py-20 md:py-28 border-t border-[#262626]/40">
     <div class="container mx-auto px-4 md:px-8">
-      <!-- Header -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
-        <div class="md:col-span-4">
-          <div class="eyebrow-label">05 / Journal</div>
-        </div>
-        <div class="md:col-span-8">
-          <h2 class="section-title text-4xl md:text-6xl">
+      <!-- 标题 -->
+      <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <div class="eyebrow mb-3">05 / Journal</div>
+          <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-tight text-[#f5f5f5]">
             最新<span class="text-[#ff4d2e]">手记</span>
           </h2>
           <p class="mt-4 text-[#a1a1aa] max-w-xl">
@@ -21,43 +19,34 @@ import { ArrowUpRight, Clock } from 'lucide-vue-next'
         </div>
       </div>
 
-      <!-- Blog cards -->
+      <!-- 卡片网格 -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <article
           v-for="item in blogItems"
           :key="item.title"
-          class="card group !p-0 overflow-hidden cursor-pointer">
-          <!-- Cover -->
-          <div class="relative aspect-video overflow-hidden">
+          class="card !p-0 overflow-hidden cursor-pointer group"
+        >
+          <div class="aspect-video overflow-hidden">
             <img
               :src="item.cover"
               :alt="item.title"
               loading="lazy"
-              decoding="async"
               class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
-            <div class="absolute top-4 left-4">
-              <span class="tag-chip !text-[10px] !py-0.5 !px-2.5 !bg-[#0a0a0a]/80 !border-[#262626]/80 backdrop-blur-sm">
-                {{ item.category }}
-              </span>
-            </div>
           </div>
-          <!-- Content -->
           <div class="p-6">
-            <h3 class="font-display text-lg font-semibold text-[#f5f5f5] leading-snug group-hover:text-[#ff4d2e] transition">
+            <div class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#a1a1aa] mb-3">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#ff4d2e]"></span>
+              {{ item.category }}
+            </div>
+            <h3 class="font-display text-lg font-semibold text-[#f5f5f5] leading-snug mb-4 group-hover:text-[#ff4d2e] transition">
               {{ item.title }}
             </h3>
-            <div class="mt-4 flex items-center justify-between text-xs text-[#71717a] font-mono">
+            <div class="flex items-center justify-between pt-4 border-t border-[#262626]/60 text-xs text-[#a1a1aa] font-mono">
               <span>{{ item.date }}</span>
-              <span class="flex items-center gap-1">
+              <span class="flex items-center gap-1.5">
                 <Clock :size="11" />
                 {{ item.readTime }}
-              </span>
-            </div>
-            <div class="mt-5 pt-4 border-t border-[#262626]/80 flex items-center justify-between">
-              <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-[#a1a1aa]">Read</span>
-              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#262626] text-[#a1a1aa] transition group-hover:border-[#ff4d2e] group-hover:text-[#ff4d2e] group-hover:bg-[#ff4d2e]/10">
-                <ArrowUpRight :size="14" />
               </span>
             </div>
           </div>

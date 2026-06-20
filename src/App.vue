@@ -4,8 +4,8 @@ import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import PortfolioSection from './components/PortfolioSection.vue'
 import ServicesSection from './components/ServicesSection.vue'
-import JournalSection from './components/JournalSection.vue'
-import VoicesSection from './components/VoicesSection.vue'
+import BlogSection from './components/BlogSection.vue'
+import TestimonialsSection from './components/TestimonialsSection.vue'
 import TheFooter from './components/TheFooter.vue'
 </script>
 
@@ -17,8 +17,8 @@ import TheFooter from './components/TheFooter.vue'
       <AboutSection />
       <PortfolioSection />
       <ServicesSection />
-      <JournalSection />
-      <VoicesSection />
+      <BlogSection />
+      <TestimonialsSection />
     </main>
     <TheFooter />
   </div>

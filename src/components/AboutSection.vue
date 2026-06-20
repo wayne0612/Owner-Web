@@ -1,54 +1,75 @@
 <script setup>
-import { profile } from '../data/site.js'
+import { profile, skills } from '../data/site.js'
+import { MapPin, Mail, Camera, Film, Users } from 'lucide-vue-next'
 </script>
 
 <template>
-  <section id="about" class="border-t border-[#1f1f1f]">
-    <div class="mx-auto max-w-[1400px] px-6 md:px-10 py-28 md:py-40">
-      <!-- Section head -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16 md:mb-24">
-        <div class="md:col-span-3">
-          <div class="label">02 / About</div>
-        </div>
-        <div class="md:col-span-9">
-          <h2 class="font-display font-medium text-h2 text-[#f5f5f5]">
-            A quiet observer of light.
-          </h2>
-        </div>
+  <section id="about" class="py-20 md:py-28 border-t border-[#262626]/40">
+    <div class="container mx-auto px-4 md:px-8">
+      <!-- 标题 -->
+      <div class="mb-12 text-center">
+        <div class="eyebrow mb-4">02 / About</div>
+        <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-tight text-[#f5f5f5]">
+          关于<span class="text-[#ff4d2e]">我</span>
+        </h2>
       </div>
 
-      <!-- Split: image on the right, text on the left, no cards -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
-        <div class="md:col-span-7 order-2 md:order-1 space-y-6 md:space-y-8">
-          <p class="text-[17px] md:text-[19px] leading-[1.65] text-[#e4e4e7] font-light max-w-[620px]">
-            {{ profile.bio }}
-          </p>
-          <p class="text-[15px] md:text-[16px] leading-[1.7] text-[#8a8a8a] max-w-[620px]">
-            Based in Shanghai, working globally. Currently accepting commissions for editorial, commercial, and personal portrait work for 2026.
-          </p>
+      <!-- 主内容 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <!-- 介绍 -->
+        <div class="md:col-span-8">
+          <div class="card h-full">
+            <h3 class="font-display text-xl md:text-2xl font-semibold text-[#f5f5f5] mb-4">
+              {{ profile.title }}
+            </h3>
+            <p class="text-[#e4e4e7] leading-relaxed mb-4">
+              {{ profile.bio }}
+            </p>
+            <p class="text-[#a1a1aa] leading-relaxed mb-6">
+              我相信每一张照片都是一次时间的凝固。拍摄对我而言不仅是职业,
+              更是一场持续进行的对世界的观察练习。从街头到山川,从商业拍摄到个人纪实,
+              我希望用影像留住那些转瞬即逝却又无比珍贵的瞬间。
+            </p>
 
-          <!-- Stats row (divided, no card boxes) -->
-          <div class="pt-10 md:pt-14 grid grid-cols-3 gap-6 border-t border-[#1f1f1f]">
-            <div v-for="stat in profile.stats" :key="stat.label" class="pt-6">
-              <div class="font-display text-[28px] md:text-[38px] font-medium text-[#f5f5f5] leading-none">{{ stat.number }}</div>
-              <div class="mt-3 text-[11px] uppercase tracking-[0.18em] text-[#8a8a8a] font-mono">{{ stat.label }}</div>
+            <div class="flex flex-wrap items-center gap-5 text-sm text-[#a1a1aa] mb-6">
+              <div class="flex items-center gap-2">
+                <MapPin :size="14" />
+                <span>{{ profile.location }}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <Mail :size="14" />
+                <span>{{ profile.email }}</span>
+              </div>
+            </div>
+
+            <!-- 技能标签 -->
+            <div class="pt-5 border-t border-[#262626]/60">
+              <div class="eyebrow mb-4">专长领域</div>
+              <div class="flex flex-wrap gap-2">
+                <span v-for="skill in skills" :key="skill" class="tag-chip">
+                  {{ skill }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Portrait image (no card frame, no border) -->
-        <div class="md:col-span-5 order-1 md:order-2">
-          <div class="relative aspect-[4/5] w-full overflow-hidden">
-            <img
-              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=editorial%20photographer%20portrait%20black%20and%20white%20studio%20cinematic&image_size=portrait_4_3"
-              :alt="profile.name"
-              loading="lazy"
-              class="w-full h-full object-cover"
-            />
+        <!-- 统计卡 -->
+        <div class="md:col-span-4 flex flex-col gap-6">
+          <div class="card text-center bg-gradient-to-br from-[#141414] to-[#ff4d2e]/10 border-[#ff4d2e]/30">
+            <Camera :size="28" class="mx-auto mb-3 text-[#ff4d2e]" />
+            <div class="font-display text-4xl font-bold text-[#f5f5f5]">120+</div>
+            <div class="mt-1 text-sm text-[#a1a1aa]">摄影项目</div>
           </div>
-          <!-- Small caption, understated -->
-          <div class="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8a8a8a]">
-            {{ profile.name }} · {{ profile.location }}
+          <div class="card text-center">
+            <Film :size="28" class="mx-auto mb-3 text-[#ff4d2e]" />
+            <div class="font-display text-4xl font-bold text-[#f5f5f5]">35+</div>
+            <div class="mt-1 text-sm text-[#a1a1aa]">视频短片</div>
+          </div>
+          <div class="card text-center">
+            <Users :size="28" class="mx-auto mb-3 text-[#ff4d2e]" />
+            <div class="font-display text-4xl font-bold text-[#f5f5f5]">40+</div>
+            <div class="mt-1 text-sm text-[#a1a1aa]">品牌合作</div>
           </div>
         </div>
       </div>
