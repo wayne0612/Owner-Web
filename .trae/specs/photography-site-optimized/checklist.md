@@ -1,0 +1,30 @@
+- [ ] Checkpoint 1: `package.json` 包含 Vue 3、Tailwind CSS v3、Vite 5、Lucide Vue Next、PostCSS、autoprefixer,且有 dev/build 脚本
+- [ ] Checkpoint 2: `tailwind.config.js` 配置 content 指向 Vue 文件、定义 display/sans/mono 三类 Sans-serif 字体栈、无 serif 字体
+- [ ] Checkpoint 3: `postcss.config.js` 正确配置 tailwindcss + autoprefixer
+- [ ] Checkpoint 4: `vite.config.js` 正确引用 @vitejs/plugin-vue
+- [ ] Checkpoint 5: `index.html` 含 viewport meta、title、Google Fonts 预连接(display=swap)、#app 元素
+- [ ] Checkpoint 6: `src/style.css` 含 @tailwind 三层指令、CSS 变量(--ink-base/#0a0a0a/--brand/#ff4d2e)、body 基础样式(仅无衬线字体族)
+- [ ] Checkpoint 7: `src/main.js` 正确导入 style.css 并 createApp(App).mount('#app')
+- [ ] Checkpoint 8: `src/data/site.js` 导出 portfolioItems(≥6)、blogItems(≥4)、serviceItems(≥3)、testimonialItems(≥2)、skills、profile 数据结构完整
+- [ ] Checkpoint 9: 作品/博客/服务/评价 数据项均含合理的 text-to-image URL 或备用图片 URL
+- [ ] Checkpoint 10: `src/App.vue` 使用 `<script setup>`、`setup script`,section 顺序为 Navbar → Hero → About → Portfolio → Services → Blog → Testimonials → Footer
+- [ ] Checkpoint 11: `src/components/TheNavbar.vue` 固定顶栏、滚动时有背景过渡、含 Logo/导航/社交图标、移动端有汉堡菜单
+- [ ] Checkpoint 12: `src/components/HeroSection.vue` 大号 Display 标题(≥3rem)、右侧肖像卡、边角编号元数据、径向渐变光晕、滚动指示器、响应式双栏→单栏
+- [ ] Checkpoint 13: `src/components/AboutSection.vue` 介绍文字 + 数据卡片 + 技能标签 chip,hover 高亮
+- [ ] Checkpoint 14: `src/components/PortfolioSection.vue` 响应式 1/2/3 列网格,aspect-[4/5] 作品卡,hover 图片 scale+高亮边框
+- [ ] Checkpoint 15: `src/components/ServicesSection.vue` 服务卡片含 Lucide 图标,首张卡片 accent 色边框微突出
+- [ ] Checkpoint 16: `src/components/BlogSection.vue` 横向/纵向自适应,缩略图+日期+时长
+- [ ] Checkpoint 17: `src/components/TestimonialsSection.vue` 引号装饰+客户名+公司
+- [ ] Checkpoint 18: `src/components/TheFooter.vue` 邮箱+社交+版权,顶部有 border-divider
+- [ ] Checkpoint 19: 全部卡片使用统一设计语言: rounded-2xl, border border-neutral-800, bg-neutral-900, p-6, transition hover border-[#ff4d2e] -translate-y-1
+- [ ] Checkpoint 20: 全站字体仅使用 Space Grotesk(Display)、Inter(正文)、JetBrains Mono(数字),中文回退到 PingFang SC、Microsoft YaHei、sans-serif
+- [ ] Checkpoint 21: 非首屏图片使用 `loading="lazy"` + `decoding="async"`
+- [ ] Checkpoint 22: 动效仅使用 CSS transition/transform/opacity,无第三方动画库
+- [ ] Checkpoint 23: `npm install` 成功无致命 error
+- [ ] Checkpoint 24: `npm run dev` 启动 Vite server 正常,控制台无 error
+- [ ] Checkpoint 25: `npm run build` 成功,dist/ 产物存在
+- [ ] Checkpoint 26: 在 360px / 768px / 1024px / 1280px 四档视口布局均正确响应
+- [ ] Checkpoint 27: 语义化 HTML: <nav> <section> <article> <footer> 使用正确
+- [ ] Checkpoint 28: 图片均含 alt 属性,可访问性达标
+- [ ] Checkpoint 29: 页面整体视觉:暗色主题一致,强调色 #ff4d2e 仅用于关键交互元素
+- [ ] Checkpoint 30: Hero 排版在 1024px+ 视口有"杂志感",留白充足,元素对齐严谨
